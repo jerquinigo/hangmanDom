@@ -1,0 +1,9 @@
+#displayParent {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.liItems {
+  margin-right: 1%;
+}
