@@ -2,14 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let words = ["able", "about", "account"];
 
   let wordArr;
+
+  // main ol to have li populate on
   let displayList = document.getElementById("displayParent");
+  let childDisplay = document.createElement("li");
   displayBlanks = words => {
     let wordGenerator = words[Math.floor(Math.random() * words.length)];
     console.log(wordGenerator);
-
     wordArr = wordGenerator.split("");
+
+    // global word to use in the project
     wordArr.forEach(el => {
-      let childDisplay = document.createElement("li");
       childDisplay.className = "liItems";
       if (el) {
         childDisplay.innerText += " " + "_" + " ";
@@ -24,12 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keypress", event => {
     let keyCode = event.keyCode;
     let keyWord = String.fromCharCode(keyCode);
+    let newChildDisplay = document.createElement("li");
+    // wordArr.forEach(el => {
+    //   if (el === keyWord) {
+    //     newChildDisplay.innerText += " " + el + " ";
+    //     displayList.replaceChild(newChildDisplay, childDisplay);
+    //   }
+    // });
 
-    wordArr.forEach(el => {
-      if (el === keyWord) {
-        body.replaceChild(ptag, ptag2);
-      }
-    });
     // return keyWord;
   });
 });
